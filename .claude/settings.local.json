@@ -12,7 +12,8 @@
       "Bash(curl -s -I http://localhost:3000/admin/dashboard)",
       "Bash(npx kill-port *)",
       "Bash(taskkill /F /IM node.exe)",
-      "Bash(vercel dev *)"
+      "Bash(vercel dev *)",
+      "Bash(vercel --prod)"
     ]
   }
 }

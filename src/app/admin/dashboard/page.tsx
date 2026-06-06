@@ -47,17 +47,6 @@ export default async function Dashboard() {
         ))}
       </div>
 
-      {/* DB Init helper */}
-      {banners.length === 0 && categories.length === 0 && products.length === 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-8">
-          <h3 className="font-semibold text-amber-800 mb-2">First Time Setup</h3>
-          <p className="text-sm text-amber-700 mb-4">
-            Initialize the database to start adding banners, categories, and products.
-          </p>
-          <InitDbButton />
-        </div>
-      )}
-
       {/* Recent products */}
       {products.length > 0 && (
         <div className="bg-white rounded-2xl border border-border overflow-hidden">
@@ -97,19 +86,3 @@ export default async function Dashboard() {
   );
 }
 
-function InitDbButton() {
-  return (
-    <form action={async () => {
-      'use server';
-      const { initDb } = await import('@/lib/db');
-      await initDb();
-    }}>
-      <button
-        type="submit"
-        className="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-      >
-        Initialize Database
-      </button>
-    </form>
-  );
-}

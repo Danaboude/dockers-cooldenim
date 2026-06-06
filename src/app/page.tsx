@@ -7,7 +7,7 @@ import ProductGallery from '@/components/ProductGallery';
 import Footer from '@/components/Footer';
 import LocationButton from '@/components/LocationButton';
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   let banners: Awaited<ReturnType<typeof getBanners>> = [];
